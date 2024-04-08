@@ -1,3 +1,12 @@
-option:hover {
-    background-color: yellow !important;
+option {
+   color:gray
+  }
+  select{
+    border-right: 1px solid black;
+    color:gray
+    
+  }
+  select:hover {
+    border: none; 
+    border-right: 1px solid black;
   }

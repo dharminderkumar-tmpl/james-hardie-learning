@@ -1,5 +1,5 @@
 import React from "react";
-import "./Builder.css"
+import "./Builder.css";
 function Builder() {
   return (
     <div className="mt-20 relative">
@@ -12,8 +12,8 @@ function Builder() {
           Explore a list of builders in your area
         </h2>
 
-        <div className="p-20 flex items-center w-full ">
-          <select className="bg-white py-2.5 px-4 w-2/5 border-r-3 ">
+        <div className="p-20 flex items-center w-full border-r-3 " >
+          <select className="bg-white py-2.5 px-4 w-2/5 border-r-3   ">
             <option
               disabled
               selected
@@ -24,9 +24,9 @@ function Builder() {
               Project Type
             </option>
 
-            <option className="hover:bg-gray-200 ">Option 1</option>
-            <option className="hover:bg-gray-200">Option 2</option>
-            <option className="hover:bg-gray-200">Option 3</option>
+            <option className=" ">Option 1</option>
+            <option className="">Option 2</option>
+            <option className="">Option 3</option>
           </select>
 
           <input
