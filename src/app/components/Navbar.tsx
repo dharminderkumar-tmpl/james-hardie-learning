@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
+import {  Menu, MenuItem } from "./ui/navbar-menu";
 import { cn } from "../utils/cn";
 import Link from "next/link";
+import { Search } from "lucide-react";
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
@@ -39,12 +40,7 @@ function Navbar({ className }: { className?: string }) {
           ></MenuItem>
         </Link>
         <MenuItem setActive={setActive} active={active} item="Inspiration">
-          {/* <div className="flex flex-col space-y-4 text-sm">
-                <HoveredLink href='/courses'>Products</HoveredLink>
-                <HoveredLink href='/courses'>Inspiration</HoveredLink>
-                <HoveredLink href='/courses'>Resources</HoveredLink>
-                <HoveredLink href='/courses'>Home Guide</HoveredLink>
-            </div> */}
+          
         </MenuItem>
         <Link href="/resources">
           <MenuItem
@@ -64,7 +60,7 @@ function Navbar({ className }: { className?: string }) {
       <Menu setActive={setActive}>
         <div className="flex gap-1 w-full">
           <div className="flex items-center">
-            <img src="./images/searchIcon.png" alt="Search Icon" />
+            <Search/>
           </div>
           <div>Search Products</div>
         </div>
