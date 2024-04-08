@@ -26,7 +26,7 @@ const ExploreAll: React.FC<ExploreAllProps> = ({ image, title, description }) =>
      <div className='ml-28'>
      <div className='mt-20'>
         <h1 className="text-center font-bold font-montserrat text-3xl leading-5 text-gray-700 mt-12">
-          Explore what's possible
+          Explore what&apos;s possible
         </h1>
       </div>
       <div className='flex justify-center mt-12'>
