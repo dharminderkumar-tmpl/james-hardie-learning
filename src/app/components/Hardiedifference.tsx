@@ -36,7 +36,7 @@ function Hardiedifference() {
         </div>
       </div>
 
-      <button className="bg-green-700 hover:bg-green-900 text-white py-2 px-4 mx-auto flex justify-center font-semibold font-montserrat text-lg leading-5 ">
+      <button className="bg-gradient-to-br from-green-600 via-green-500 to-green-400 hover:bg-gradient-to-br hover:from-green-900 hover:via-green-900 hover:to-green-900 text-white py-2 px-4 mx-auto flex justify-center font-semibold font-montserrat text-lg leading-5 ">
       DISCOVER THE DIFFERENCE
     </button>
       </div>
