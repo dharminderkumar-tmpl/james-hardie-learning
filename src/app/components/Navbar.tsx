@@ -67,7 +67,7 @@ function Navbar({ className }: { className?: string }) {
         <div className="group">
           <button className="bg-gradient-to-br from-green-600 via-green-500 to-green-400 hover:bg-gradient-to-br hover:from-green-900 hover:via-green-900 hover:to-green-900 text-white pl-5 pr-12 pt-5 pb-5 mx-auto flex justify-center font-semibold font-montserrat text-lg leading-5 items-center ">
             <h2>myHardie™|</h2>
-            <h3 className="text-white font-medium text-xs/2 sm:text-sm leading-tight float-right max-w-[60px] text-left pl-1">
+            <h3 className="text-white font-normal text-xs/2 sm:text-sm leading-tight float-right max-w-[60px] text-left pl-1">
               Internal Professionals
             </h3>
           </button>
