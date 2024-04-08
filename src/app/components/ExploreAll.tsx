@@ -4,13 +4,13 @@ const data = [
   {
     id: 1,
     image: "./images/FarmHouse.webp",
-    title: "OAK AND ORANGE’S DESIGN TIPS FOR MODERN FARMHOUSE STYLE",
+    title: "OAK AND ORANGE DESIGN TIPS FOR MODERN FARMHOUSE STYLE",
     description: "Oak & Orange on Modern Farmhouse style",
   },
   {
     id: 2,
     image: "./images/FarmHouse.webp",
-    title: "OAK AND ORANGE’S DESIGN TIPS FOR MODERN FARMHOUSE STYLE",
+    title: "OAK AND ORANGE DESIGN TIPS FOR MODERN FARMHOUSE STYLE",
     description: "Oak & Orange on Modern Farmhouse style",
   },
 ];
