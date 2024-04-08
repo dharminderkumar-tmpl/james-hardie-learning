@@ -1,5 +1,6 @@
 import React from "react";
 import "./Builder.css";
+import { Search } from 'lucide-react';
 function Builder() {
   return (
     <div className="mt-20 relative">
@@ -35,9 +36,12 @@ function Builder() {
             className=" py-2 px-4  w-full"
           />
 
-          <button className="bg-gradient-to-br from-green-600 via-green-500 to-green-400 hover:bg-gradient-to-br hover:from-green-900 hover:via-green-900 hover:to-green-900 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline w-1/5">
-            Search
+          
+            <button className=" flex items-center gap-4 bg-gradient-to-br from-green-600 via-green-500 to-green-400 hover:bg-gradient-to-br hover:from-green-900 hover:via-green-900 hover:to-green-900 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline w-1/5">
+            <Search/>
+            SEARCH
           </button>
+          
         </div>
       </div>
     </div>
