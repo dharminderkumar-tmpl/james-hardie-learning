@@ -30,10 +30,8 @@ function Navbar({ className }: { className?: string }) {
             </g>
           </svg>
         </Link>
-      </Menu>
-      <Menu setActive={setActive}>
         <Link href="/">
-          <MenuItem
+          <MenuItem 
             setActive={setActive}
             active={active}
             item="Products"
@@ -57,21 +55,22 @@ function Navbar({ className }: { className?: string }) {
           ></MenuItem>
         </Link>
       </Menu>
+      
       <Menu setActive={setActive}>
-        <div className="flex gap-1 w-full">
-          <div className="flex items-center">
+        <div className="flex  w-full gap-2 justify-end items-center hover:cursor-pointer">
+          <div className="flex ">
             <Search/>
           </div>
-          <div>Search Products</div>
+          <div className="text-gray-700 px-2 py-3 h-full flex items-center font-montserrat font-medium text-lg">Search Products</div>
         </div>
-        <div className="group">
-          <button className="bg-gradient-to-br from-green-600 via-green-500 to-green-400 hover:bg-gradient-to-br hover:from-green-900 hover:via-green-900 hover:to-green-900 text-white pl-5 pr-12 pt-5 pb-5 mx-auto flex justify-center font-semibold font-montserrat text-lg leading-5 items-center ">
+        
+          <button className="bg-gradient-to-br from-green-600 via-green-500 to-green-400 hover:bg-gradient-to-br hover:from-green-900 hover:via-green-900 hover:to-green-900 text-white pl-5 pr-12 pt-5 pb-5 mx-auto flex justify-center font-semibold font-montserrat text-lg leading-5 items-center h-16 gap-4">
             <h2>myHardie™|</h2>
             <h3 className="text-white font-normal text-xs/2 sm:text-sm leading-tight float-right max-w-[60px] text-left pl-1">
               Internal Professionals
             </h3>
           </button>
-        </div>
+        
       </Menu>
     </div>
   );

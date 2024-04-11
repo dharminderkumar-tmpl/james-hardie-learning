@@ -28,7 +28,7 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative ">
       <motion.p
         transition={{ duration: 0.6 }}
-        className="cursor-pointer text-black hover:underline-green dark:text-white text-[16px]"
+        className=" hover:underline-green dark:text-white text-[16px] text-gray-700 px-2 py-3 bg-white cursor-pointer  flex items-center font-montserrat font-medium text-lg whitespace-nowrap leading-4"
       >
         {item}
       </motion.p>
@@ -42,11 +42,11 @@ export const MenuItem = ({
             <div className="absolute top-[calc(100%_+_1.7rem)] left-1/2 transform -translate-x-1/2">
               <motion.div
                 transition={transition}
-                layoutId="active" // layoutId ensures smooth animation
+                layoutId="active" 
                 className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
               >
                 <motion.div
-                  layout // layout ensures smooth animation
+                  layout 
                   className="w-max h-full p-4"
                 >
                   {children}
@@ -69,8 +69,8 @@ export const Menu = ({
 }) => {
   return (
     <nav
-      onMouseLeave={() => setActive(null)} // resets the state
-      className="relative w-full boder border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-between space-x-4 px-8 py-6 gap-5 items-center z-10000"
+      onMouseLeave={() => setActive(null)} 
+      className="relative w-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-between space-x-4 px-8 py-6 gap-5 items-center z-10000 "
     >
       {children}
     </nav>

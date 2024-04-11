@@ -22,7 +22,7 @@ export default function RootLayout({
      <div className=" w-full flex items-center justify-evenly z-[999999999] fixed top-0"> 
      <Navbar/>
      </div>
-     <div className="mt-32">
+     <div className="mt-28">
 
       {children}
      </div>
