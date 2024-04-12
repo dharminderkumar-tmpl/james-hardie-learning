@@ -38,8 +38,12 @@ function HeroSection() {
         <CarouselContent className="h-full">
           {data.map((item: any) => (
             <CarouselItem className="relative h-[calc(83vh)]" key={item.id}>
-              <img src={item.image} className="object-cover"/> 
-              <div className={`border-2 w-[409px] h-[345px] px-10 pt-[45px] pb-14 bg-white absolute top-1/3 ${item.id % 2 !== 0 ? 'left-32' : 'right-32'} `}>
+              <img src={item.image} className="object-cover" />
+              <div
+                className={`border-2 w-[409px] h-[345px] px-10 pt-[45px] pb-14 bg-white absolute top-1/3 ${
+                  item.id % 2 !== 0 ? "left-32" : "right-32"
+                } `}
+              >
                 <h1 className="font-bold font-montserrat text-gray-900 text-2xl">
                   Hardie™ Architectural Collection
                 </h1>
@@ -68,10 +72,8 @@ function HeroSection() {
         <h2 className="">FIND A BUILDER IN MY LOCAL AREA</h2>
     </button> */}
       </Carousel>
-      
     </div>
   );
 }
 
 export default HeroSection;
-        
