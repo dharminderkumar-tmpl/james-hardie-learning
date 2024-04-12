@@ -37,7 +37,7 @@ function HeroSection() {
       >
         <CarouselContent className="h-full">
           {data.map((item: any) => (
-            <CarouselItem className="relative h-[calc(83vh)]" key={item.id}>
+            <CarouselItem className="relative h-[calc(90vh)]" key={item.id}>
               <img src={item.image} className="object-cover" />
               <div
                 className={`border-2 w-[409px] h-[345px] px-10 pt-[45px] pb-14 bg-white absolute top-1/3 ${
