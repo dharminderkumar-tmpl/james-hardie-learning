@@ -74,7 +74,7 @@ function page({ setIsOpen }: any) {
             </div>
 
             <div className="mt-8">
-              <button className="bg-gradient-to-br from-green-600 via-green-500 to-green-400 hover:bg-gradient-to-br hover:from-green-900 hover:via-green-900 hover:to-green-900 text-white  p-8 mx-auto flex justify-center font-normal font-montserrat text-lg leading-5  h-10 items-center">
+              <button className="bg-gradient-to-br from-green-600 via-green-500 to-green-400 hover:bg-gradient-to-br hover:from-green-900 hover:via-green-900 hover:to-green-900 text-white  p-6 mx-auto flex justify-center font-normal font-montserrat text-lg leading-5  h-10 items-center">
                 <h2>View All Products</h2>
                 <ArrowUpRight />
               </button>
