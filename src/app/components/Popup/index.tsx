@@ -51,7 +51,7 @@ function page({ setIsOpen }: any) {
             </div>
             <input
               type="text"
-              className="text-gray-700 px-2 py-3 flex-grow font-montserrat  text-2sm outline-none font-sans font-normal  leading-[18.4px]"
+              className="text-gray-700 px-2 py-3 flex-grow font-montserrat  text-2sm outline-none font-sans font-normal  w-3/6  leading-[18.4px]"
               style={{ color: "#343B4E" }}
               placeholder={placeholder}
             />
@@ -83,7 +83,7 @@ function page({ setIsOpen }: any) {
                 </div>
               ))}
             </div>
-            <div className="flex flex-nowrap pr-16 pl-16  items-center mt-3">
+            <div className="flex flex-nowrap pr-16 pl-16  items-center mt-4">
               {data1.map((item, index) => (
                 <div key={index} className="w-1/3 flex gap-3 items-center mt-4">
                   <img src={item.src} alt={item.alt} className="w-1/3" />
