@@ -81,7 +81,7 @@ function Navbar({ className }: { className?: string }) {
             <div className="flex ">
               <Search />
             </div>
-            <div className="text-gray-700 px-2 py-3 h-full flex items-center font-montserrat font-medium text-lg">
+            <div className="text-gray-700 px-2 py-3 h-full flex items-center font-montserrat font-normal text-lg">
               Search Products
             </div>
           </div>
