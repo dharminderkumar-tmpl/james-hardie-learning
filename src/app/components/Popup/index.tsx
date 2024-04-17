@@ -6,7 +6,7 @@ import DOMPurify from "dompurify";
 import axios from "axios";
 import "./index.css";
 
-function page({ setIsOpen }: any) {
+function index({ setIsOpen }: any) {
   const [input, setInput] = useState("");
   const [response, setResponse] = useState<any>(null);
   const [error, setError] = useState<any>(null);
@@ -170,16 +170,17 @@ function page({ setIsOpen }: any) {
                     fire protection?
                   </p>
                   <p>
-                    Or maybe you're envisioning a cozy rustic vibe for your
+                    Or maybe you re envisioning a cozy rustic vibe for your
                     home?
                   </p>
                   <p>
-                    Our team's here to help. Whether it's about modernizing,
+                    Our teams here to help. Whether its about modernizing,
                     fireproofing, or rusticating (yes, we just made that word
                     up), just ask away!
                   </p>
                   <p>
-                    Let's team up and turn your ideas into James Hardie reality.
+                    Let us team up and turn your ideas into James Hardie
+                    reality.
                   </p>
                 </div>
               )}
@@ -191,4 +192,4 @@ function page({ setIsOpen }: any) {
   );
 }
 
-export default page;
+export default index;
