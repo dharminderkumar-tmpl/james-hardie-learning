@@ -115,7 +115,7 @@ function Index({ setIsOpen }: any) {
                     }}
                   ></div>
 
-                  <div className="pr-16 pl-16 items-center mt-5 max-sm:mt-7 grid lg:grid-cols-3 grid-cols-1 sm:grid-cols-2 max-sm:grid-cols-1 max-sm:pr-0 max-sm:pl-0">
+                  <div className="pr-16 pl-16 items-center mt-5 max-sm:mt-7 grid lg:grid-cols-3 grid-cols-1 sm:grid-cols-2 max-sm:grid-cols-1 max-sm:pr-0 max-sm:pl-0 gap-4">
                     {response?.products &&
                       response?.products?.map((product: any, index: any) => (
                         <a
