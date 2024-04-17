@@ -65,12 +65,13 @@ function Index({ setIsOpen }: any) {
   return (
     <>
       <div
-        className="MainContent max-sm:items-start"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
+        className="MainContent max-sm:W-[90%]"
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
+
         // onClick={handleBlur}
       >
-        <div className="InnerContent max-sm:items-start ">
-          <div className=" InnerinnerContent  ">
+        <div className="InnerContent max-sm:items-start max-sm:width-[90%]">
+          <div className=" InnerinnerContent max-sm:flex max-sm:items-start">
             <div
               className="absolute top-16 right-4 cursor-pointer"
               onClick={handleBlur}
@@ -78,10 +79,10 @@ function Index({ setIsOpen }: any) {
               <CloseIcon />
             </div>
             <div
-              className="w-full bg-white mx-auto flex flex-col p-8 h-full "
+              className="w-full bg-white mx-auto flex flex-col p-8 h-full max-sm:p-4"
               style={{ borderTop: "4px solid green" }}
             >
-              <div className="flex mx-auto justify-start w-3/6 gap-2 border-2 border-gray-300 rounded-full items-center cursor-pointer mb-8 max-sm:w-full ">
+              <div className="flex mx-auto justify-start w-3/6 gap-2 border-2 border-gray-300 rounded-full items-center cursor-pointer mb-8 max-sm:w-full max-sm:mt-8">
                 <div className="ml-4">
                   <Search />
                 </div>
