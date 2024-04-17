@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Menu, MenuItem } from "./ui/navbar-menu";
 import { cn } from "../utils/cn";
 import Link from "next/link";
-import Popup from "./Popup/Index";
+import Popup from "./Popup/index";
 import { Search } from "lucide-react";
 function Navbar({ className }: { className?: string }) {
   const [isOpen, setIsOpen] = useState(false);
