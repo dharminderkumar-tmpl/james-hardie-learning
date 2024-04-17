@@ -165,7 +165,7 @@ function Index({ setIsOpen }: any) {
                   style={{ color: "#343b4e99" }}
                 >
                   <em>
-                    "Welcome to the James Hardie Chatbot! Wondering which
+                    Welcome to the James Hardie Chatbot! Wondering which
                     products from the Hardie™ Architectural Collection give your
                     space that sleek modern edge? Need to know which cladding
                     options offer top-notch bush fire protection? Or maybe you
@@ -173,7 +173,7 @@ function Index({ setIsOpen }: any) {
                     here to help. Whether its about modernizing, fireproofing,
                     or rusticating (yes, we just made that word up), just ask
                     away! Let us team up and turn your ideas into James Hardie
-                    reality."
+                    reality.
                   </em>
                 </div>
               )}
