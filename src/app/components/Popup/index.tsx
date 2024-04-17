@@ -6,7 +6,7 @@ import DOMPurify from "dompurify";
 import axios from "axios";
 import "./index.css";
 
-function index({ setIsOpen }: any) {
+function Index({ setIsOpen }: any) {
   const [input, setInput] = useState("");
   const [response, setResponse] = useState<any>(null);
   const [error, setError] = useState<any>(null);
@@ -192,4 +192,4 @@ function index({ setIsOpen }: any) {
   );
 }
 
-export default index;
+export default Index;
