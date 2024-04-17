@@ -1,6 +1,6 @@
 .loader {
-  width: 60px;
-  height: 60px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   position: relative;
   animation: rotate 1s linear infinite;
@@ -11,7 +11,7 @@
   position: absolute;
   inset: 0px;
   border-radius: 50%;
-  border: 6px solid #044e30;
+  border: 8px solid #044e30;
   animation: prixClipFix 2s linear infinite;
 }
 
@@ -70,7 +70,7 @@
 @media screen and (max-width: 768px) {
   .InnerinnerContent {
     width: 85vw;
-    align-self: self-start;
+    /* align-self: self-start; */
   }
 }
 @media screen and (max-width: 576px) {

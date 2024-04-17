@@ -9,7 +9,7 @@ import "./index.css";
 function Index({ setIsOpen }: any) {
   const [input, setInput] = useState("");
   const [response, setResponse] = useState<any>(null);
-  const [error, setError] = useState<any>(null);
+  const [error, setError] = useState<any>(false);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (event: any) => {
@@ -24,18 +24,19 @@ function Index({ setIsOpen }: any) {
   async function postData() {
     try {
       // console.log("response called");
-      setError(null);
+      setError(false);
       setLoading(true);
 
-      const response = await axios.post("http://tunica.zapto.org:6060/api", {
+      const response = await axios.post("https://jh-demo-ai.onrender.com/api", {
         userQuery: input,
         clientId: "JamesHardie",
       });
+      // const response = await axios.get("/ ");
       setResponse(response.data);
       console.log(response.data, "response");
       // setError(false);
     } catch (error) {
-      setError("error");
+      setError(true);
       console.log(error, "error");
     } finally {
       setLoading(false);
@@ -64,12 +65,12 @@ function Index({ setIsOpen }: any) {
   return (
     <>
       <div
-        className="MainContent"
+        className="MainContent max-sm:items-start"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
         // onClick={handleBlur}
       >
-        <div className="InnerContent">
-          <div className=" InnerinnerContent">
+        <div className="InnerContent max-sm:items-start ">
+          <div className=" InnerinnerContent  ">
             <div
               className="absolute top-16 right-4 cursor-pointer"
               onClick={handleBlur}
@@ -96,46 +97,48 @@ function Index({ setIsOpen }: any) {
               </div>
 
               {loading ? (
-                <div className=" flex justify-center ">
+                <div className=" flex justify-center my-10">
                   <span className="loader"></span>
                 </div>
+              ) : error ? (
+                <b className="text-center ">
+                  Some error occurred, please try again.
+                </b>
               ) : response && input ? (
                 <>
                   <div
-                    className="leading-6 text-center font-sans font-normal text-base pr-4 pl-4 max-sm:pr-0 max-sm:pl-0"
+                    className="leading-6 text-center font-sans font-normal text-base pr-4 pl-4 max-sm:pr-0 max-sm:pl-0 "
                     style={{ color: "#343B4E" }}
                     dangerouslySetInnerHTML={{
-                      __html: DOMPurify.sanitize(response.summarizationText),
+                      __html: DOMPurify.sanitize(response?.summarizationText),
                     }}
                   ></div>
 
-                  <div className="pr-16 pl-16  items-center mt-5 grid lg:grid-cols-3 grid-cols-1 sm:grid-cols-2 max-sm:grid-cols-1 max-sm:pr-0 max-sm:pl-0">
-                    {response.products &&
-                      response.products.map((product: any, index: any) => (
+                  <div className="pr-16 pl-16 items-center mt-5 max-sm:mt-7 grid lg:grid-cols-3 grid-cols-1 sm:grid-cols-2 max-sm:grid-cols-1 max-sm:pr-0 max-sm:pl-0">
+                    {response?.products &&
+                      response?.products?.map((product: any, index: any) => (
                         <a
                           key={index}
-                          href={product.url}
-                          className=" flex gap-3 items-center hover:bg-gray-200 w-full mb-4 max-sm:flex-col"
+                          href={product?.url}
+                          className=" flex gap-4 items-center w-full mb-4"
                           // style={{ minWidth: "calc(33.33% - 2rem)" }}
                         >
                           <img
-                            src={product.productImg}
-                            className="w-1/3 max-sm:w-full"
-                            alt={product.title}
+                            src={product?.productImg}
+                            className="w-1/3"
+                            alt={product?.title}
                           />
                           <div className="flex flex-col gap-1">
-                            <b className="text-sm">{product.title}</b>
-                            <div className="flex gap-2">
-                              <img src="./images/phool.png" alt="phool" />
-                              <img src="./images/plant.png" alt="plant" />
-                            </div>
-                            <b className="text-sm">Rs.239</b>
+                            <b className="text-sm">{product?.title}</b>
                           </div>
                         </a>
                       ))}
                   </div>
 
-                  <a className="mt-5" href="https://www.jameshardie.com/">
+                  <a
+                    className="mt-5"
+                    href="https://www.jameshardie.com.au/categories/cladding"
+                  >
                     <button className="bg-green-900 text-white p-6 mx-auto flex justify-center font-normal font-montserrat text-lg leading-5 h-10 items-center">
                       <h2>View All Products</h2>
                       <ArrowUpRight />
@@ -157,31 +160,20 @@ function Index({ setIsOpen }: any) {
                 </>
               ) : (
                 <div
-                  className="flex flex-col justify-center items-center align-middle h-full leading-6 text-center font-sans font-semibold text-base pr-4 pl-4 "
-                  style={{ color: "#343B4E" }}
+                  className="flex flex-col justify-center items-center align-middle h-full leading-6 text-center font-sans font-semibold text-base pr-4 pl-4 my-6 "
+                  style={{ color: "#343b4e99" }}
                 >
-                  <p>Welcome to the James Hardie Chatbot!</p>
-                  <p>
-                    Wondering which products from the Hardie™ Architectural
-                    Collection give your space that sleek modern edge?
-                  </p>
-                  <p>
-                    Need to know which cladding options offer top-notch bush
-                    fire protection?
-                  </p>
-                  <p>
-                    Or maybe you re envisioning a cozy rustic vibe for your
-                    home?
-                  </p>
-                  <p>
-                    Our teams here to help. Whether its about modernizing,
-                    fireproofing, or rusticating (yes, we just made that word
-                    up), just ask away!
-                  </p>
-                  <p>
-                    Let us team up and turn your ideas into James Hardie
-                    reality.
-                  </p>
+                  <em>
+                    "Welcome to the James Hardie Chatbot! Wondering which
+                    products from the Hardie™ Architectural Collection give your
+                    space that sleek modern edge? Need to know which cladding
+                    options offer top-notch bush fire protection? Or maybe you
+                    re envisioning a cozy rustic vibe for your home? Our teams
+                    here to help. Whether its about modernizing, fireproofing,
+                    or rusticating (yes, we just made that word up), just ask
+                    away! Let us team up and turn your ideas into James Hardie
+                    reality."
+                  </em>
                 </div>
               )}
             </div>
