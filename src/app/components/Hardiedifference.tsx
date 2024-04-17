@@ -2,7 +2,7 @@ import React from "react";
 
 function Hardiedifference() {
   return (
-    <div className="mt-20">
+    <div className="mt-20 max-sm:hidden">
       <div className="mt-10 bg-white">
         <h1 className="text-center font-bold font-montserrat text-xl leading-10 mt-10">
           The Hardie™ difference

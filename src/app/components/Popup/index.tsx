@@ -27,7 +27,7 @@ function page({ setIsOpen }: any) {
       setError(null);
       setLoading(true);
 
-      const response = await axios.post("http://192.168.1.48:6060/api", {
+      const response = await axios.post("http://tunica.zapto.org:6060/api", {
         userQuery: input,
         clientId: "JamesHardie",
       });
@@ -64,29 +64,29 @@ function page({ setIsOpen }: any) {
   return (
     <>
       <div
-        className="relative h-screen w-screen"
+        className="MainContent"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
         // onClick={handleBlur}
       >
-        <div className="h-screen w-full overflow-x-hidden  absolute flex justify-center">
-          <div className="relative top-16 w-[90%]  flex align-middle">
+        <div className="InnerContent">
+          <div className=" InnerinnerContent">
             <div
-              className="absolute top-5 right-4 cursor-pointer"
+              className="absolute top-16 right-4 cursor-pointer"
               onClick={handleBlur}
             >
               <CloseIcon />
             </div>
             <div
-              className="w-full bg-white mx-auto flex flex-col p-8 h-full"
+              className="w-full bg-white mx-auto flex flex-col p-8 h-full "
               style={{ borderTop: "4px solid green" }}
             >
-              <div className="flex mx-auto justify-start w-3/6 gap-2 border-2 border-gray-300 rounded-full items-center cursor-pointer mb-8">
+              <div className="flex mx-auto justify-start w-3/6 gap-2 border-2 border-gray-300 rounded-full items-center cursor-pointer mb-8 max-sm:w-full ">
                 <div className="ml-4">
                   <Search />
                 </div>
                 <input
                   type="text"
-                  className="text-gray-700 px-2 py-3 flex-grow font-montserrat text-2sm outline-none font-sans font-normal w-3/6 leading-[18.4px] rounded-full"
+                  className="text-gray-700 px-2 py-3 flex-grow font-montserrat text-2sm outline-none font-sans font-normal w-3/6 leading-[18.4px] rounded-full md:w-full"
                   style={{ color: "#343B4E" }}
                   value={input}
                   placeholder={placeholder}
@@ -96,31 +96,31 @@ function page({ setIsOpen }: any) {
               </div>
 
               {loading ? (
-                <div className=" flex justify-center mt-[4.5rem]">
+                <div className=" flex justify-center ">
                   <span className="loader"></span>
                 </div>
               ) : response && input ? (
                 <>
                   <div
-                    className="leading-6 text-center font-sans font-normal text-base pr-4 pl-4"
+                    className="leading-6 text-center font-sans font-normal text-base pr-4 pl-4 max-sm:pr-0 max-sm:pl-0"
                     style={{ color: "#343B4E" }}
                     dangerouslySetInnerHTML={{
                       __html: DOMPurify.sanitize(response.summarizationText),
                     }}
                   ></div>
 
-                  <div className="pr-16 pl-16  items-center mt-5 grid grid-cols-3">
+                  <div className="pr-16 pl-16  items-center mt-5 grid lg:grid-cols-3 grid-cols-1 sm:grid-cols-2 max-sm:grid-cols-1 max-sm:pr-0 max-sm:pl-0">
                     {response.products &&
                       response.products.map((product: any, index: any) => (
                         <a
                           key={index}
                           href={product.url}
-                          className=" flex gap-3 items-center hover:bg-gray-200 w-full mb-4"
+                          className=" flex gap-3 items-center hover:bg-gray-200 w-full mb-4 max-sm:flex-col"
                           // style={{ minWidth: "calc(33.33% - 2rem)" }}
                         >
                           <img
                             src={product.productImg}
-                            className="w-1/3"
+                            className="w-1/3 max-sm:w-full"
                             alt={product.title}
                           />
                           <div className="flex flex-col gap-1">

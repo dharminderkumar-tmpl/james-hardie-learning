@@ -9,7 +9,6 @@ function Navbar({ className }: { className?: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
-    console.log("fjnjfn");
     setIsOpen((prev) => !prev);
   };
   useEffect(() => {
@@ -22,7 +21,12 @@ function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
     <>
-      <div className={cn("fixed top-0 inset-x-0 w-full flex  ", className)}>
+      <div
+        className={cn(
+          "fixed top-0 inset-x-0 w-full flex max-sm:justify-around max-sm:bg-white ",
+          className
+        )}
+      >
         <Menu setActive={setActive}>
           <Link href="/">
             <svg
@@ -30,6 +34,7 @@ function Navbar({ className }: { className?: string }) {
               width="200"
               height="58"
               viewBox="0 0 285 58"
+              className="max-sm:h-20 max-sm:w-36"
             >
               <g fill="none" fill-rule="evenodd">
                 <g fill="#2D2A26" fill-rule="nonzero">
@@ -45,32 +50,34 @@ function Navbar({ className }: { className?: string }) {
               </g>
             </svg>
           </Link>
-          <Link href="/">
+          <div className="max-sm:hidden justify-between px-8 py-4 gap-[2.25rem] items-center flex !ml-0">
+            <Link href="/">
+              <MenuItem
+                setActive={setActive}
+                active={active}
+                item="Products"
+              ></MenuItem>
+            </Link>
             <MenuItem
               setActive={setActive}
               active={active}
-              item="Products"
+              item="Inspiration"
             ></MenuItem>
-          </Link>
-          <MenuItem
-            setActive={setActive}
-            active={active}
-            item="Inspiration"
-          ></MenuItem>
-          <Link href="/resources">
-            <MenuItem
-              setActive={setActive}
-              active={active}
-              item="Resources"
-            ></MenuItem>
-          </Link>
-          <Link href="/homeguide">
-            <MenuItem
-              setActive={setActive}
-              active={active}
-              item="Home Guide"
-            ></MenuItem>
-          </Link>
+            <Link href="/resources">
+              <MenuItem
+                setActive={setActive}
+                active={active}
+                item="Resources"
+              ></MenuItem>
+            </Link>
+            <Link href="/homeguide">
+              <MenuItem
+                setActive={setActive}
+                active={active}
+                item="Home Guide"
+              ></MenuItem>
+            </Link>
+          </div>
         </Menu>
 
         <Menu setActive={setActive}>
@@ -81,12 +88,12 @@ function Navbar({ className }: { className?: string }) {
             <div className="flex ">
               <Search />
             </div>
-            <div className="text-gray-700 px-2 py-3 h-full flex items-center font-montserrat font-normal text-lg">
+            <div className="text-gray-700 px-2 py-3 h-full flex items-center font-montserrat font-normal text-lg max-[420px]:px-0 max-sm:text-nowrap max-sm:text-base">
               Search Products
             </div>
           </div>
 
-          <button className="bg-gradient-to-br from-green-600 via-green-500 to-green-400 hover:bg-gradient-to-br hover:from-green-900 hover:via-green-900 hover:to-green-900 text-white pl-5 pr-12 pt-5 pb-5 mx-auto flex justify-center font-semibold font-montserrat text-lg leading-5 items-center h-14 gap-2">
+          <button className="bg-gradient-to-br from-green-600 via-green-500 to-green-400 hover:bg-gradient-to-br hover:from-green-900 hover:via-green-900 hover:to-green-900 text-white pl-5 pr-12 pt-5 pb-5 mx-auto flex justify-center font-semibold font-montserrat text-lg leading-5 items-center h-14 gap-2 max-sm:hidden">
             <h2 className="text-nowrap">myHardie™ |</h2>
             <h3 className="text-white font-normal text-xs  leading-tight float-right max-w-[60px] text-left pl-1">
               Internal Professionals
