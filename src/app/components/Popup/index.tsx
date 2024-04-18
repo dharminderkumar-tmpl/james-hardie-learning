@@ -70,8 +70,8 @@ function Index({ setIsOpen }: any) {
 
         // onClick={handleBlur}
       >
-        <div className="InnerContent max-sm:items-start max-sm:width-[90%]">
-          <div className=" InnerinnerContent max-sm:flex max-sm:items-start">
+        <div className="InnerContent max-sm:items-start ">
+          <div className=" InnerinnerContent max-sm:flex max-sm:items-start max-sm:width-[91vw]">
             <div
               className="absolute top-16 right-4 cursor-pointer"
               onClick={handleBlur}
