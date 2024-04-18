@@ -58,9 +58,41 @@ function Index({ setIsOpen }: any) {
   const handleBlur = () => {
     setIsOpen(false);
   };
-  const [placeholder, setPlaceholder] = useState(
-    "What are some of the best products we have here?"
-  );
+  // const [placeholder, setPlaceholder] = useState(
+  //   "What are some of the best products we have here?"
+  // );
+
+  const [showPlaceholder, setShowPlaceholder] = useState(true)
+  const [currentPlaceholderIndex, setCurrentPlaceholderIndex] = useState(0)
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const placeHolders = [
+    'Which styles are popular in Modern Homes Forecast 2024 report?',
+    'Which design elements are characteristic of Modern Farmhouse style?',
+    'What are the popular and emerging residential styles?',
+    'Which products in the Hardie™ Architectural Collection would be best for a modern look?',
+    'What product should I use to make my house look more aesthetic?',
+  ]
+
+  const currentPlaceholder = Array.isArray(placeHolders)
+    ? placeHolders[currentPlaceholderIndex]
+    : placeHolders
+
+  useEffect(() => {
+    if (Array.isArray(placeHolders) && placeHolders.length > 1) {
+      const timer = setInterval(() => {
+        setShowPlaceholder(false)
+        setTimeout(() => {
+          setCurrentPlaceholderIndex(
+            (prevIndex: number) => (prevIndex + 1) % placeHolders.length
+          )
+          setShowPlaceholder(true)
+        }, 300)
+      }, 3000)
+
+      return () => clearInterval(timer)
+    }
+  }, [placeHolders])
 
   return (
     <>
@@ -70,28 +102,29 @@ function Index({ setIsOpen }: any) {
 
         // onClick={handleBlur}
       >
-        <div className="InnerContent max-sm:items-start ">
-          <div className=" InnerinnerContent max-sm:flex max-sm:items-start max-sm:width-[91vw]">
+        <div className={`InnerContent ${response ? 'items-start' : 'items-center'}`}>
+          <div className=" InnerinnerContent max-sm:flex max-sm:items-start max-sm:width-[85vw]">
             <div
-              className="absolute top-16 right-4 cursor-pointer"
+              className="absolute top-16 right-4 max-sm:right-2 cursor-pointer"
               onClick={handleBlur}
             >
               <CloseIcon />
             </div>
             <div
-              className="w-full bg-white mx-auto flex flex-col p-8 h-full max-sm:p-4"
+              className="w-full bg-white mx-auto flex flex-col py-10 px-6 h-fit max-sm:p-3"
               style={{ borderTop: "4px solid green" }}
             >
-              <div className="flex mx-auto justify-start w-3/6 gap-2 border-2 border-gray-300 rounded-full items-center cursor-pointer mb-8 max-sm:w-full max-sm:mt-8">
+              <div className="flex mx-auto justify-start w-[60%] gap-2 border-2 border-gray-300 rounded-full items-center cursor-pointer mb-8 max-sm:w-full max-sm:mt-8">
                 <div className="ml-4">
                   <Search />
                 </div>
                 <input
                   type="text"
-                  className="text-gray-700 px-2 py-3 flex-grow font-montserrat text-2sm outline-none font-sans font-normal w-3/6 leading-[18.4px] rounded-full md:w-full"
+                  className={`text-gray-700 px-2 py-3 flex-grow font-montserrat text-2sm outline-none font-sans font-normal w-[60%] leading-[18.4px] rounded-full md:w-full ${'input'} ${showPlaceholder ? '' : 'placeholderHidden'
+          }`}
                   style={{ color: "#343B4E" }}
                   value={input}
-                  placeholder={placeholder}
+                  placeholder={currentPlaceholder}
                   onChange={handleChange}
                   onKeyDown={input ? handleClick : undefined}
                 />
@@ -121,12 +154,13 @@ function Index({ setIsOpen }: any) {
                         <a
                           key={index}
                           href={product?.url}
-                          className=" flex gap-4 items-center w-full mb-4"
+                          className="flex gap-4 items-center w-full mb-4"
                           // style={{ minWidth: "calc(33.33% - 2rem)" }}
                         >
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={product?.productImg}
-                            className="w-1/3 h-26 object-cover max-sm:h-[86px]"
+                            className="w-[100px] h-[100px] object-fill max-sm:h-[86px]"
                             alt={product?.title}
                           />
                           <div className="flex flex-col gap-1">
@@ -159,24 +193,7 @@ function Index({ setIsOpen }: any) {
                       ))}
                   </div>
                 </>
-              ) : (
-                <div
-                  className="flex flex-col justify-center items-center align-middle h-full leading-6 text-center font-sans font-semibold text-base pr-4 pl-4 my-6 "
-                  style={{ color: "#343b4e99" }}
-                >
-                  <em>
-                    Welcome to the James Hardie Chatbot! Wondering which
-                    products from the Hardie™ Architectural Collection give your
-                    space that sleek modern edge? Need to know which cladding
-                    options offer top-notch bush fire protection? Or maybe you
-                    re envisioning a cozy rustic vibe for your home? Our teams
-                    here to help. Whether its about modernizing, fireproofing,
-                    or rusticating (yes, we just made that word up), just ask
-                    away! Let us team up and turn your ideas into James Hardie
-                    reality.
-                  </em>
-                </div>
-              )}
+              ) : null}
             </div>
           </div>
         </div>
