@@ -126,7 +126,7 @@ function Index({ setIsOpen }: any) {
                         >
                           <img
                             src={product?.productImg}
-                            className="w-1/3"
+                            className="w-1/3 h-26 object-cover"
                             alt={product?.title}
                           />
                           <div className="flex flex-col gap-1">

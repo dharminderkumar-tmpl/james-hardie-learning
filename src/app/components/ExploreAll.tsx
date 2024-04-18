@@ -43,7 +43,7 @@ const ExploreAll: React.FC<ExploreAllProps> = ({
                 <p>{description}</p>
               </div>
               <h1 className="mt-5 font-montserrat text-xl uppercase text-green-700 leading-2.66 hover:underline cursor-pointer">
-                LEARN MORE
+                learn more
               </h1>
             </div>
             <div>
